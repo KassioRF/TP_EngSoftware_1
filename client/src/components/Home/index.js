@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { Title } from '../styles'
 import Container from 'react-bootstrap/Container'
+import { Title, BodyPage } from '../styles'
+
 
 
 class Home extends Component {
   render() {
     return (
       <Container>
-        <Title> Home </Title>
+        <BodyPage>
+          <Title> Home </Title>
+        </BodyPage>
       </Container>
     )
   }
