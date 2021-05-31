@@ -19,5 +19,5 @@ Trabalho prático - Engenharia de Software I / CSI403 - Semestre 2020/2
 | Command | Description |
 |---------|-------------|
 | `npm install` | Install project dependencies |
-| `yarn start` | Build project and open web server running project on localhost:3001 |
+| `yarn start` | Build project and open web server running project on localhost:3000 |
 
