@@ -2,6 +2,10 @@ import styled from 'styled-components'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
+let green = '#A8E000'
+let purple = '#881B3C'
+
+
 /** Header */
 export const Nav_ = styled(Nav)`
   text-transform: uppercase;
@@ -38,7 +42,8 @@ export const Title = styled.h1`
 /** Footer */
 export const Footer_ = styled.footer`
   color: rgba(0,0,0,.5);
-  background-color: #feca57;
+  /*background-color: #feca57;*/
+  background-color: ${purple};
   padding: 7vh 0;
   position: fixed;
   width: 100%;

@@ -9,7 +9,6 @@ function Footer() {
       <Container fluid>
         <Container>
           <Title> Footer </Title>
-
         </Container>
       </Container>
     </Footer_>

@@ -12,6 +12,7 @@ class Home extends Component {
           <Title> Home </Title>
         </BodyPage>
       </Container>
+
     )
   }
 }
