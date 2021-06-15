@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import Navbar from 'react-bootstrap/Navbar'
+
 import Nav from 'react-bootstrap/Nav'
 
 let green = '#A8E000'
 let purple = '#881B3C'
 
-
+/********************** Basic Components *************************/
 /** Header */
 export const Nav_ = styled(Nav)`
   text-transform: uppercase;
@@ -25,9 +26,7 @@ export const Navbar_ = styled(Navbar)`
 
 `
 
-
-
-/** General Content */
+/** Body general's */
 export const BodyPage = styled.div`
     min-height: 70vh;
     padding: 10vh 0;
@@ -35,17 +34,18 @@ export const BodyPage = styled.div`
 export const Title = styled.h1`
   text-align: center;
 
-  /*margin-top: 20vh;*/
-
 `
 
 /** Footer */
 export const Footer_ = styled.footer`
   color: rgba(0,0,0,.5);
-  /*background-color: #feca57;*/
   background-color: ${purple};
   padding: 7vh 0;
-  position: fixed;
+  margin-top: 10vh;
   width: 100%;
   bottom: 0;
 `
+
+/********************** General Components *************************/
+
+/* Donate */
