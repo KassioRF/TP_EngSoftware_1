@@ -8,15 +8,17 @@ import { Title, BodyPage } from '../styles'
 class Donate extends Component {
   render() {
     return (
-      <Container>
-        <BodyPage>
+      <BodyPage>
           <Title> Divulgar adoção </Title>
 
           <hr />
-          <FormBootstrap />
+        <Container  fluid>
+          <div className="form-container">
+            <FormBootstrap />
+          </div>
+        </Container>
 
         </BodyPage>
-      </Container>
     )
   }
 }
