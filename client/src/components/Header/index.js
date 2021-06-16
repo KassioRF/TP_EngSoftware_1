@@ -15,7 +15,7 @@ function Header() {
         <Container>
           <Navbar.Brand as={Link} to="/" >
             <Image style={{ height: 60, marginRight: 18 }} src={LogoPng} />
-            Nome do App
+            {/* Nome do App */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
