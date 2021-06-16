@@ -17,7 +17,6 @@ class Donate extends Component {
 
         </BodyPage>
       </Container>
-
     )
   }
 }

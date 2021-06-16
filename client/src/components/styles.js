@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 import Navbar from 'react-bootstrap/Navbar'
-
 import Nav from 'react-bootstrap/Nav'
 
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+//import Form from 'react-bootstrap/Form'
 let green = '#A8E000'
 let purple = '#881B3C'
+
+
 
 /********************** Basic Components *************************/
 /** Header */
@@ -49,3 +53,21 @@ export const Footer_ = styled.footer`
 /********************** General Components *************************/
 
 /* Donate */
+
+export const Row_ = styled(Row)`
+  .form-sub-title {
+    justify-content: center;
+  }
+
+`
+export const Form_ = styled(Form)`
+  
+  /* background-image: url("../img/img_fundo.jpg"); */
+  .form-row {
+    justify-content: center;
+  }
+
+  
+
+
+`
