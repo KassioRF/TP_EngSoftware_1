@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title, Footer_ } from '../styles'
+import { FooterTitle, Footer_ } from '../styles'
 import Container from 'react-bootstrap/Container'
 
 
@@ -8,7 +8,7 @@ function Footer() {
     <Footer_>
       <Container fluid>
         <Container>
-          <Title> Footer </Title>
+          <FooterTitle> Footer </FooterTitle>
         </Container>
       </Container>
     </Footer_>

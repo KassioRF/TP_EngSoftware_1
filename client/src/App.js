@@ -5,6 +5,16 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Donate from './components/Donate'
+import Adopt from './components/Adopt'
+import { FormContainer as Form_ } from './components/styles'
+
+class FormContainer_ extends Component {
+  render() {
+    return (
+      <Form_ fluid></Form_>
+    )
+  }
+}
 
 
 class App extends Component {
@@ -12,8 +22,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Header />
+        <FormContainer_ />
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/adopt' component={Adopt} />
           <Route exact path='/donate' component={Donate} />
 
         </Switch>
