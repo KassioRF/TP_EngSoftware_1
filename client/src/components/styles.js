@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 
 
 import FormBootstrap from './Donate/Form'
+import ListView from './ListAll/ListView'
 //import Form from 'react-bootstrap/Form'
 let yellow = 'yellow'
 let black = '#262626'
@@ -137,8 +138,18 @@ export const Form_ = styled(Form)`
     width: 40%;
     background-color: ${black} !important;
     border: 1px solid ${black};
-
-
+  }
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    ${'' /* color: ${yellow}; */}
+    background-color: ${black} !important;
+    border-color: #005cbf;
+    box-shadow: 0 0 0 0.2rem rgb(255 204 0 / 50%)
+  }
+    .btn-primary.focus, .btn-primary:focus {
+    color: ${yellow};
+    background-color: ${black};
+    border-color: ${yellow};
+    box-shadow: 0 0 0 0.2rem rgb(255 204 0 / 50%);
   }
 `
 
@@ -165,7 +176,25 @@ export const FormBtn = styled(Button)`
   padding: 1.1rem 0;
   transition: .2s;
   box-shadow: 0 0px 5px 1px rgb(100 100 100);
+
   
 `
 
 
+/* ---------- TESTES ---------- */
+
+export const ListView_ = styled(ListView)`
+  margin-left: 25%;
+  .list-view {
+  background-color: ${witheText} !important;
+  color: ${black};
+  font-size: 18px;
+  }
+  `
+
+
+export const ListElements = styled(ColForm)`
+  padding-left: 15%;
+  margin-bottom: 5rem;
+  
+`

@@ -23,6 +23,7 @@ function Header() {
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/adopt">Adote um pet</Nav.Link>
               <Nav.Link as={Link} to="/donate"> Quero doar</Nav.Link>
+              <Nav.Link as={Link} to="/listall"> [Teste db]*</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

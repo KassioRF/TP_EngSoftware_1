@@ -5,6 +5,7 @@ import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
 //Uploaded url
+/*
 function getBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -13,22 +14,42 @@ function getBase64(file) {
     reader.onerror = error => reject(error);
   });
 }
-
+*/
 class UploadImages extends Component {
-  state = {
-    previewVisible: false,
-    previewImage: '',
-    previewTitle: '',
-    fileList: [
+  constructor(props) {
+    super(props);
 
-    ],
-  };
+    //this.previewImage = React.createRef();
+
+    this.handleCancel = this.handleCancel.bind(this);
+    this.handlePreview = this.handlePreview.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.getBase64 = this.getBase64.bind(this);
+    this.state = {
+      previewVisible: false,
+      previewImage: '',
+      previewTitle: '',
+      fileList: [
+
+      ],
+
+    };
+
+  }
+  getBase64 = (file) => {
+    return new Promise(async (resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
 
   handleCancel = () => this.setState({ previewVisible: false });
   //Image Preview
   handlePreview = async file => {
     if (!file.url && !file.preview) {
-      file.preview = await getBase64(file.originFileObj);
+      file.preview = await this.getBase64(file.originFileObj);
     }
 
     this.setState({
@@ -38,7 +59,13 @@ class UploadImages extends Component {
     });
   };
 
-  handleChange = ({ fileList }) => this.setState({ fileList });
+  handleChange = ({ fileList }) => {
+    //console.log(fileList)
+    this.setState({ fileList });
+    this.props.data(fileList);
+
+
+  }
 
   render() {
     const { previewVisible, previewImage, fileList, previewTitle } = this.state;
@@ -51,7 +78,8 @@ class UploadImages extends Component {
     return (
       <>
         <Upload
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          action={this.state.getBase64}
+          name="image"
           listType="picture-card"
           fileList={fileList}
           onPreview={this.handlePreview}
