@@ -132,7 +132,7 @@ class FormBootstrap extends Component {
       author: this.state.author,
       contact: this.state.contact,
       email: this.state.email,
-      disctric: this.state.district,
+      district: this.state.district,
       city: this.state.city,
       state: this.state.state,
       //post Info
@@ -141,7 +141,7 @@ class FormBootstrap extends Component {
       age: this.state.age,
       gender: this.state.gender,
       description: this.state.description,
-      imageUrl: this.state.imageUrl
+      imageUrl: 'img'
     };
     console.log(data)
     PostDataService.create(data)
@@ -155,11 +155,10 @@ class FormBootstrap extends Component {
           description: response.data.description,
           //imageUrl: response.data.imageUrl,
           */
-
           submitted: true
 
         });
-        console.log(response.data)
+        //console.log(response.data)
 
       })
       .catch(e => {

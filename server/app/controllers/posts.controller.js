@@ -5,6 +5,7 @@ const Op = db.Sequelize.Op;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
+  console.log('entrou em create')
   // Validade request
   if (!req.body.title) {
     res.status(400).send({
@@ -15,30 +16,40 @@ exports.create = (req, res) => {
 
   // Create an new Post
   const post = {
+    author: req.body.author,
+    contact: req.body.contact,
+    email: req.body.email,
+    district: 'teste', //req.body.district,
+    city: req.body.city,
+    state: req.body.state,
     title: req.body.title,
     type: req.body.type,
-    age: req.body.age,
+    age: parseInt(req.body.age),
+    gender: 'male', //req.body.gender,
     description: req.body.description,
-    imageUrl: req.body.imageUrl
+    imageUrl: req.body.imageUrl,
+   
   };
 
   console.log(post)
-  //res.send({ data: "Meu confrade, aqui os dados foram recebidos com sucesso!!!! =D" });
+  res.send({ data: "Meu confrade, aqui os dados foram recebidos com sucesso!!!! =D" });
 
   //SALVAR depois de conferir os dados!
-  /*
+
   // @Todo: Caso algo dê errado, desfazer a transação
   Posts.create(post)
     .then(data => {
       res.send(data);
+      console.log('post criado')
     })
     .catch(err => {
+      console.log('caiu no catch')
       res.status(500).send({
         message:
           err.message || "Some error ocurred while creating the POST"
       });
     });
-*/
+
 };
 
 // Retrieve all Post from the database.
