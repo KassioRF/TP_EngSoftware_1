@@ -19,16 +19,16 @@ exports.create = (req, res) => {
     author: req.body.author,
     contact: req.body.contact,
     email: req.body.email,
-    district: 'teste', //req.body.district,
+    district: req.body.district,
     city: req.body.city,
     state: req.body.state,
     title: req.body.title,
     type: req.body.type,
     age: parseInt(req.body.age),
-    gender: 'male', //req.body.gender,
+    gender: req.body.gender,
     description: req.body.description,
     imageUrl: req.body.imageUrl,
-   
+
   };
 
   console.log(post)
@@ -44,6 +44,7 @@ exports.create = (req, res) => {
     })
     .catch(err => {
       console.log('caiu no catch')
+      console.log(req.body)
       res.status(500).send({
         message:
           err.message || "Some error ocurred while creating the POST"
