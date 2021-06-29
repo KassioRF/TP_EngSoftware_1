@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 
 import FormBootstrap from './Donate/Form'
@@ -13,19 +14,19 @@ import ListView from './ListAll/ListView'
 //import Form from 'react-bootstrap/Form'
 let yellow = 'yellow'
 let black = '#262626'
-let witheText = '#f5f6fa'
+let whiteText = '#f5f6fa'
 
 
 /********************** Basic Components *************************/
 /** Header */
 export const Nav_ = styled(Nav)`
-  color:${witheText};
+  color:${whiteText};
   text-transform: uppercase;
   font-size: 14px;
   margin: 0 1rem;
   
   a {
-    color: ${witheText}!important;
+    color: ${whiteText}!important;
     transition: 0.2s;
     margin: 0 1rem !important;
     padding: 0 1rem !important;
@@ -58,7 +59,7 @@ export const BodyPage = styled.div`
 `
 export const Title = styled.h1`
 
-  color: ${witheText};
+  color: ${whiteText};
   letter-spacing: 1px;
   background-color: ${black};
   text-align: center;
@@ -82,7 +83,7 @@ export const Footer_ = styled.footer`
   bottom: 0;
 `
 export const FooterTitle = styled.h1`
-  color: ${witheText};
+  color: ${whiteText};
   text-align: center;
   padding: 5vh;
   margin: 0rem 5rem;
@@ -115,7 +116,7 @@ export const Row_ = styled(Row)`
     justify-content: center;
   }
   h4 {
-    color: ${witheText};
+    color: ${whiteText};
   }
 
 `
@@ -133,7 +134,7 @@ export const Form_ = styled(Form)`
   }
   .btn-primary:hover, .btn-primary:hover  {
     
-    color: ${witheText};
+    color: ${whiteText};
     font-weight: 600;
     width: 40%;
     background-color: ${black} !important;
@@ -154,7 +155,7 @@ export const Form_ = styled(Form)`
 `
 
 export const ColForm = styled(Col)`
-  color: ${witheText};
+  color: ${whiteText};
   padding: 3rem 0;
   background-color: ${black};
     
@@ -186,7 +187,7 @@ export const FormBtn = styled(Button)`
 export const ListView_ = styled(ListView)`
   margin-left: 25%;
   .list-view {
-  background-color: ${witheText} !important;
+  background-color: ${whiteText} !important;
   color: ${black};
   font-size: 18px;
   }
@@ -196,5 +197,28 @@ export const ListView_ = styled(ListView)`
 export const ListElements = styled(ColForm)`
   padding-left: 15%;
   margin-bottom: 5rem;
+  
+`
+
+
+/*Seção adote um pet */
+
+export const CardAdopt = styled(Card)`
+  
+
+  background-color: ${black};
+  .card-title {
+    color: ${whiteText};
+  }
+
+  .card-text {
+    color: ${whiteText};
+  }
+
+  .btn-primary {
+    background-color: ${yellow};
+    color: black;
+  }
+  
   
 `
