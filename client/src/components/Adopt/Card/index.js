@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 // import Card from 'react-bootstrap/Card'
 import {CardAdopt as Card } from '../../styles'
 import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class CardAdopt extends Component {
     render() {
@@ -15,15 +16,25 @@ class CardAdopt extends Component {
                 <Card.Text>
                 Ele pode ser seu parça de estudos
                 </Card.Text>
+
+                <Row>
+                <Col md={5}  >
+                <Card.Text>
+                Cachorro
+                </Card.Text>
                 <Card.Text>
                 Raça: bigu
-                </Card.Text>
-                <Card.Text>
-                Sexo: M
-                </Card.Text>
+                </Card.Text></Col>
+                <Col md={5}>
                 <Card.Text> 
                 Idade: 3
                 </Card.Text>
+                <Card.Text> 
+                Sexo: M
+                </Card.Text></Col></Row>
+                
+                
+                
                 <Row><Button variant="primary">Adotar!</Button></Row>
             </Card.Body>
         </Card>

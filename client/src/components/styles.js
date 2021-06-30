@@ -205,9 +205,17 @@ export const ListElements = styled(ColForm)`
 
 export const CardAdopt = styled(Card)`
   
-    .row{
-      justify-content: center;
-    }
+  .row{
+    justify-content: center;
+  }
+
+  .col-md-5 {
+    text-align: -webkit-center;
+  }
+
+  .Card.Text{
+    padding-right: 2rem;
+  }
 
   background-color: ${black};
   .card-title {
@@ -223,6 +231,7 @@ export const CardAdopt = styled(Card)`
     color: black;
     border: 4pt ${black};
     justify-content: center;
+    margin-top: 3rem;
     }
   
 `
