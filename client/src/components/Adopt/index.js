@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import CardAdopt from './Card'
+import { RowAdopt as Row } from '../styles'
 // import CardGroup from 'react-bootstrap/CardGroup'
 // import Card from 'react-bootstrap/Card'
-import Row from 'react-bootstrap/Row'
+// import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Title, BodyPage} from '../styles'
 
@@ -32,9 +33,6 @@ class Adopt extends Component {
             <Col><CardAdopt /></Col>
           </Row>
           
-         
-         
-
 
         </BodyPage>
       </Container>

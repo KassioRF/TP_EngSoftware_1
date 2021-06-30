@@ -218,7 +218,14 @@ export const CardAdopt = styled(Card)`
   .btn-primary {
     background-color: ${yellow};
     color: black;
-  }
-  
+    border: 4pt ${black};
+    }
   
 `
+
+export const RowAdopt = styled(Row)`
+  
+  margin-bottom: 3vh;
+
+   `
+  
