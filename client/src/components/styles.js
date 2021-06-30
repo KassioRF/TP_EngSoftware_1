@@ -205,6 +205,9 @@ export const ListElements = styled(ColForm)`
 
 export const CardAdopt = styled(Card)`
   
+    .row{
+      justify-content: center;
+    }
 
   background-color: ${black};
   .card-title {
@@ -219,6 +222,7 @@ export const CardAdopt = styled(Card)`
     background-color: ${yellow};
     color: black;
     border: 4pt ${black};
+    justify-content: center;
     }
   
 `

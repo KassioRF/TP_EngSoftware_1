@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 // import Card from 'react-bootstrap/Card'
 import {CardAdopt as Card } from '../../styles'
+import Row from 'react-bootstrap/Row'
 
 class CardAdopt extends Component {
     render() {
@@ -23,7 +24,7 @@ class CardAdopt extends Component {
                 <Card.Text> 
                 Idade: 3
                 </Card.Text>
-                <Button variant="primary">Adotar!</Button>
+                <Row><Button variant="primary">Adotar!</Button></Row>
             </Card.Body>
         </Card>
         )
