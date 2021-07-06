@@ -7,10 +7,11 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-
+import Image from 'react-bootstrap/Image'
 
 import FormBootstrap from './Donate/Form'
 import ListView from './ListAll/ListView'
+import PostPage from './PostPage'
 //import Form from 'react-bootstrap/Form'
 let yellow = 'yellow'
 let black = '#262626'
@@ -77,7 +78,7 @@ export const Title = styled.h1`
 export const Footer_ = styled.footer`
 
   background-color: ${black};
-  padding: 7vh 0;
+  padding: 0.01vh 0;
   /*margin-top: 10vh;*/
   width: 100%;
   bottom: 0;
@@ -241,4 +242,39 @@ export const RowAdopt = styled(Row)`
   margin-bottom: 3vh;
 
    `
-  
+
+
+/*------Seção Post Page-------- */
+export const ImagePost = styled(Image)`
+    width: 100%;
+    padding-top: 1.5rem;
+`
+export const InfoPost = styled(Col)
+`
+.row{
+  justify-content: center;
+}
+    background-color: ${black};
+   
+    margin-top: 1.5rem;
+    h1 { 
+      color: ${whiteText};
+      text-align:center;
+    }
+
+    .list-group-flush > .list-group-item {
+      color: ${whiteText};
+      background-color: ${black};
+      
+    }
+
+    .btn-primary {
+      background-color: ${yellow};
+      color: black;
+      border: 4pt ${black};
+      justify-content: center;
+      margin-top: 3rem;
+      }
+    
+    
+`

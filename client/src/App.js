@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Donate from './components/Donate'
 import Adopt from './components/Adopt'
 import ListAll from './components/ListAll'
+import PostPage from './components/PostPage'
 import { FormContainer as Form_ } from './components/styles'
 
 class FormContainer_ extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path='/adopt' component={Adopt} />
           <Route exact path='/donate' component={Donate} />
           <Route exact path='/listall' component={ListAll} />
+          <Route exact path='/post' component={PostPage} />
 
         </Switch>
         <Footer />
