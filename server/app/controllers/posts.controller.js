@@ -24,7 +24,7 @@ exports.create = (req, res) => {
     state: req.body.state,
     title: req.body.title,
     type: req.body.type,
-    age: parseInt(req.body.age),
+    age: req.body.age,
     gender: req.body.gender,
     description: req.body.description,
     imageUrl: req.body.imageUrl,
