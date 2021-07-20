@@ -8,7 +8,7 @@ Trabalho prático - Engenharia de Software I / CSI403 - Semestre 2020/2
 
 ### How to run the application
 
-#### First: On root project directory run the commands
+#### First: On /server directory run the commands
 | Command | Description |
 |---------|-------------|
 | `npm install` | Install project dependencies |
