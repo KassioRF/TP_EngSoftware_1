@@ -4,7 +4,6 @@ import PostDataService from "../../../services/Posts.service"
 //import InputGroup from 'react-bootstrap/InputGroup'
 import Col from 'react-bootstrap/Col'
 
-
 import UploadImages from './UploadTemplate'
 import { Form_ as Form, Row_ as Row, ColForm } from '../../styles'
 import { FormBtn } from '../../styles'
@@ -44,7 +43,7 @@ class FormBootstrap extends Component {
       age: null,
       gender: "",
       description: "",
-      imageUrl: {},
+      imageUrl: [],
 
       submitted: false
     };
@@ -142,7 +141,7 @@ class FormBootstrap extends Component {
       age: this.state.age,
       gender: this.state.gender,
       description: this.state.description,
-      imageUrl: 'img'
+      images: 'url'
     };
     console.log(data)
     PostDataService.create(data)

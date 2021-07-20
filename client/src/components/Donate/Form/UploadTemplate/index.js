@@ -5,16 +5,7 @@ import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
 //Uploaded url
-/*
-function getBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
-}
-*/
+
 class UploadImages extends Component {
   constructor(props) {
     super(props);
@@ -63,6 +54,9 @@ class UploadImages extends Component {
     //console.log(fileList)
     this.setState({ fileList });
     this.props.data(fileList);
+    fileList.forEach(f => {
+      f.status = 'done'
+    })
 
 
   }
@@ -85,7 +79,7 @@ class UploadImages extends Component {
           onPreview={this.handlePreview}
           onChange={this.handleChange}
         >
-          {fileList.length >= 8 ? null : uploadButton}
+          {fileList.length >= 4 ? null : uploadButton}
         </Upload>
         <Modal
           visible={previewVisible}
