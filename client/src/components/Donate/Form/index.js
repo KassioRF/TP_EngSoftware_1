@@ -89,6 +89,7 @@ class FormBootstrap extends Component {
     this.setState({
       state: e.target.value
     });
+
   }
 
 
@@ -245,7 +246,7 @@ class FormBootstrap extends Component {
                   as="select"
                   name="state"
                   onChange={this.onChangeState}
-                  value={this.state}
+                  value={this.state.state}
                 >
 
 
