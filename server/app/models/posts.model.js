@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
   const Posts = sequelize.define("posts", {
-  
+
     author: {
       type: Sequelize.STRING
     },
@@ -35,8 +35,14 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.TEXT
     },
-    imageUrl: {
-      type: Sequelize.STRING
+    images: {
+      type: Sequelize.TEXT,
+      get: function () {
+        return JSON.parse(this.getDataValue('images'));
+      },
+      set: function (value) {
+        this.setDataValue('images', JSON.stringify(value));
+      }
     },
   });
 

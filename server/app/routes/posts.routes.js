@@ -1,3 +1,4 @@
+
 module.exports = app => {
   const posts = require("../controllers/posts.controller");
 

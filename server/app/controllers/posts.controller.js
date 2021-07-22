@@ -1,7 +1,7 @@
 const db = require("../models");
+//const upload = require('../services/upload_image_handler')
 const Posts = db.posts;
 const Op = db.Sequelize.Op;
-
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
@@ -14,7 +14,8 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create an new Post
+
+  //const imgdata = req.body.images[0].thumbUrl;
   const post = {
     author: req.body.author,
     contact: req.body.contact,
@@ -27,24 +28,27 @@ exports.create = (req, res) => {
     age: req.body.age,
     gender: req.body.gender,
     description: req.body.description,
-    imageUrl: req.body.imageUrl,
+    images: req.body.images,
 
   };
 
-  console.log(post)
-  res.send({ data: "Meu confrade, aqui os dados foram recebidos com sucesso!!!! =D" });
+
+  //console.log(post)
+  //res.send({ data: "Meu confrade, aqui os dados foram recebidos com sucesso!!!! =D" });
 
   //SALVAR depois de conferir os dados!
 
-  // @Todo: Caso algo dê errado, desfazer a transação
+  //  @Todo: Caso algo dê errado, desfazer a transação
   Posts.create(post)
     .then(data => {
+      console.log(data)
       res.send(data);
+
       console.log('post criado')
     })
     .catch(err => {
       console.log('caiu no catch')
-      console.log(req.body)
+      // console.log(req.body)
       res.status(500).send({
         message:
           err.message || "Some error ocurred while creating the POST"

@@ -3,7 +3,7 @@ import React, { Component, useState } from 'react'
 import PostsDataService from '../../services/Posts.service'
 //import { ColForm } from '../styles';
 import { ListElements } from '../styles'
-
+import imageBase64_to_png from '../../util/imageBase64_to_png'
 
 class ListView extends Component {
   constructor(props) {
@@ -25,7 +25,12 @@ class ListView extends Component {
         this.setState({
           posts: response.data
         })
-        // console.log(response.data);
+
+        //get url images for each post
+        this.state.posts.map(post => {
+          post.images = imageBase64_to_png(post)
+        })
+        console.log(this.state.posts)
       })
       .catch(e => {
         console.log(e)
@@ -34,6 +39,7 @@ class ListView extends Component {
 
   render() {
     const { posts } = this.state;
+    var imgList = {};
     return (
 
       <ListElements>
@@ -47,9 +53,20 @@ class ListView extends Component {
             posts.map((post, index) => (
               <li key={index}>
                 {post.title} - {post.type}
+                {post.images != null
+
+                  ? post.images.map((img, index2) => (
+                    <img key={index2} src={`${img.thumbUrl}`} width="480px" height="480px" />
+
+                  ))
+
+                  : console.log('sem imgs')}
               </li>
+
             ))
+
             : (
+
               <div>
                 <li>Para carregar a lista lembre-se de rodar o servidor...</li>
                 <li>no diretório /server/ rodar  yarn start </li>
@@ -57,6 +74,9 @@ class ListView extends Component {
             )
           }
         </ul>
+        <div >
+
+        </div>
       </ListElements>
 
     )

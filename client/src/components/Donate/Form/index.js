@@ -28,7 +28,7 @@ class FormBootstrap extends Component {
     this.onChangeAge = this.onChangeAge.bind(this);
     this.onChangeGender = this.onChangeGender.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeImageUrl = this.onChangeImageUrl.bind(this);
+    this.onChangeimages = this.onChangeimages.bind(this);
     this.state = {
       id: null,
       author: "",
@@ -43,7 +43,7 @@ class FormBootstrap extends Component {
       age: null,
       gender: "",
       description: "",
-      imageUrl: [],
+      images: {},
 
       submitted: false
     };
@@ -120,9 +120,9 @@ class FormBootstrap extends Component {
       description: e.target.value
     });
   }
-  onChangeImageUrl(e) {
+  onChangeimages(e) {
     this.setState({
-      imageUrl: e
+      images: e
     })
   }
 
@@ -141,9 +141,9 @@ class FormBootstrap extends Component {
       age: this.state.age,
       gender: this.state.gender,
       description: this.state.description,
-      images: 'url'
+      images: this.state.images
     };
-    console.log(data)
+    // console.log(data)
     PostDataService.create(data)
       .then(response => {
         this.setState({
@@ -153,12 +153,12 @@ class FormBootstrap extends Component {
           type: response.data.type,
           age: response.data.age,
           description: response.data.description,
-          //imageUrl: response.data.imageUrl,
+          //images: response.data.images,
           */
           submitted: true
 
         });
-        //console.log(response.data)
+        console.log(response.data.images)
 
       })
       .catch(e => {
@@ -170,7 +170,7 @@ class FormBootstrap extends Component {
   render() {
     return (
 
-      <Form>
+      <Form enctype="multipart/form-data">
 
         <Row>
           <ColForm lg="5" >
@@ -338,7 +338,7 @@ class FormBootstrap extends Component {
                   label="macho"
                   name="gender"
                   type="radio"
-                  value="male"
+                  value="macho"
                   onChange={this.onChangeGender}
                   defaultChecked
 
@@ -348,7 +348,7 @@ class FormBootstrap extends Component {
                   label="fêmea"
                   name="gender"
                   type="radio"
-                  value="female"
+                  value="fêmea"
                   onChange={this.onChangeGender}
 
                 />
@@ -373,7 +373,7 @@ class FormBootstrap extends Component {
                 <Form.Label>
                   Insira algumas fotos do pet no seu anúncio
                 </Form.Label>
-                <UploadImages data={this.onChangeImageUrl} />
+                <UploadImages data={this.onChangeimages} type="file" />
               </Form.Group>
             </Form.Row>
 

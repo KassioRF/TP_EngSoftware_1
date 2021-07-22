@@ -20,7 +20,7 @@ db.sequelize.sync();
 /* Ativar esta sync para resetar as tabelas */
 /*
 db.sequelize.sync({ force: true }).then(() => {
-console.log("Drop and re-sync db.");
+  console.log("Drop and re-sync db.");
 });
 */
 
