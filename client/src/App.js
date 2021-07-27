@@ -30,7 +30,7 @@ class App extends Component {
           <Route exact path='/adopt' component={Adopt} />
           <Route exact path='/donate' component={Donate} />
           <Route exact path='/listall' component={ListAll} />
-          <Route exact path='/post' component={PostPage} />
+          <Route path='/post/:id' component={PostPage} />
 
         </Switch>
         <Footer />

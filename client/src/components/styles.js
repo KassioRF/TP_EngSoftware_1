@@ -210,6 +210,8 @@ export const CardAdopt = styled(Card)`
     justify-content: center;
   }
 
+
+
   .col-md-5 {
     text-align: -webkit-center;
   }
@@ -250,7 +252,7 @@ export const ImagePost = styled(Image)`
     padding-top: 1.5rem;
 `
 export const InfoPost = styled(Col)
-`
+  `
 .row{
   justify-content: center;
 }

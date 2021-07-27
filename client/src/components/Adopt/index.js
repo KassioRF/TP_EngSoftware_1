@@ -55,8 +55,8 @@ class Adopt extends Component {
           <Row>
             {posts.length > 0
               ?
-              posts.map((post, index) => (
-                <Col><CardAdopt key={index} data={post} /></Col>
+              posts.map((post) => (
+                <Col key={post.id} ><CardAdopt key={post.id} data={post} /></Col>
               ))
 
               : console.log('sem posts')
