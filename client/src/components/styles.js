@@ -57,7 +57,7 @@ export const Navbar_ = styled(Navbar)`
 
 /** Body general's */
 export const BodyPage = styled.div`
-    min-height: 70vh;
+    min-height: 85vh;
     /*padding: 10vh 0;*/
 `
 export const Title = styled.h1`
@@ -236,6 +236,9 @@ export const CardAdopt = styled(Card)`
   .Card.Text{
     padding-right: 2rem;
 
+  }
+  .Card.Body {
+    min-height: 47vh;
   }
 
   background-color: ${black};

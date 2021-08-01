@@ -72,6 +72,7 @@ class UploadImages extends Component {
     return (
       <>
         <Upload
+          required
           type="file"
           action={this.state.getBase64}
           name="image"

@@ -7,23 +7,26 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 import { BodyPage } from '../styles'
 import { ImagePost as Image } from '../styles'
-import { InfoPost } from '../styles'
+import { InfoPost, ListElements } from '../styles'
 
 import PostsDataService from '../../services/Posts.service'
 import imageBase64_to_png from '../../util/imageBase64_to_png'
+
+import SimpleImageSlider from "react-simple-image-slider";
 
 
 class post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post: this.props.data
+      post: this.props.data,
+      images: []
     }
     this.retrievePost = this.retrievePost.bind(this);
+    this.getImgList = this.getImgList.bind(this);
 
   }
   componentDidMount() {
-    //console.log(this.props.match.params.id);
     this.retrievePost();
 
   }
@@ -44,10 +47,22 @@ class post extends Component {
         console.log(e)
       })
   }
+  getImgList(postImageList) {
+    let imgList = []
+    if (postImageList.length > 0) {
+      postImageList.map(img => {
+        imgList.push({ url: img.thumbUrl })
+      })
+
+    } else {
+      imgList = [{ url: process.env.PUBLIC_URL + 'img/not_found.jpg' }]
+    }
+
+    return imgList
+  }
+
   render() {
     const { post } = this.state
-    console.log(post)
-
     return (
       <Container>
         <BodyPage>
@@ -55,13 +70,34 @@ class post extends Component {
             {post
               ?
               <>
-                <Col md={6}>
-                  {post.images
-                    ?
-                    <Image src={`${post.images[0].thumbUrl}`} />
-                    :
-                    <Image src={process.env.PUBLIC_URL + 'img/doPost.jpg'} />
+                <Col md={6} style={
+                  {
+                    marginTop: '5rem',
                   }
+
+                }>
+                  <SimpleImageSlider
+                    width={480}
+                    height={480}
+                    images={this.getImgList(post.images)}
+                    showBullets={true}
+                    showNavs={true}
+                    startIndex={0}
+                    navStyle={1}
+                    navSize={50}
+                    navMargin={30}
+                    slideDuration={0.5}
+
+                    style={
+                      {
+                        width: '100%',
+                        borderRadius: '0.8rem',
+                        boxShadow: '0 0px 5px 1px rgb(100 100 100)',
+                        paddingLeft: '2rem'
+                      }
+
+                    }
+                  />
 
                 </Col>
 
@@ -87,9 +123,9 @@ class post extends Component {
               </>
               :
               <>
-                <InfoPost md={6} ><h1> Ops.. Algo deu errado :(  </h1>
+                <InfoPost md={12} ><h4 style={{ color: 'tomato' }}> Ops.. Algo deu errado :(  </h4>
                   <ListGroup variant="flush">
-                    <ListGroup.Item>Tente novamente. </ListGroup.Item>
+                    <ListGroup.Item>Não é possível se conectar com o servidor... </ListGroup.Item>
 
 
 
@@ -115,7 +151,7 @@ class post extends Component {
           }
 
         </BodyPage>
-      </Container>
+      </Container >
 
     )
   }

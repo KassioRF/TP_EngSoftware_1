@@ -7,8 +7,7 @@ import { RowAdopt as Row } from '../styles'
 // import Card from 'react-bootstrap/Card'
 // import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { Title, BodyPage } from '../styles'
-
+import { Title, BodyPage, ListElements } from '../styles'
 import PostsDataService from '../../services/Posts.service'
 import imageBase64_to_png from '../../util/imageBase64_to_png'
 
@@ -70,7 +69,14 @@ class Adopt extends Component {
                 </Row>
 
               </>
-              : console.log('sem posts')
+              :
+              <ListElements>
+                <h4 style={{ color: 'tomato' }}> Não foi possível se conectar com o servidor. </h4>
+                <hr />
+                <div>
+                  <li>no diretório /server/ rodar  yarn start </li>
+                </div>
+              </ListElements>
             }
 
           </Row>

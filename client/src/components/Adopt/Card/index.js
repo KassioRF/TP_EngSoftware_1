@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-// import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
-// import Card from 'react-bootstrap/Card'
-import { CardAdopt as Card } from '../../styles'
+
 import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
+import { CardAdopt as Card } from '../../styles'
+
+
 
 
 class CardAdopt extends Component {
@@ -23,11 +24,11 @@ class CardAdopt extends Component {
     return (
 
       <Card >
-        {post.images
+        {post.images.length > 0
           ?
           <Card.Img variant="top" src={`${post.images[0].thumbUrl}`} />
           :
-          <Card.Img variant="top" src={process.env.PUBLIC_URL + 'img/dog.jpg'} />
+          <Card.Img variant="top" src={process.env.PUBLIC_URL + 'img/not_found.jpg'} />
         }
         <Card.Body>
           <Card.Title>{post.title}</Card.Title>

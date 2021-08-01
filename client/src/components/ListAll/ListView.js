@@ -5,6 +5,10 @@ import PostsDataService from '../../services/Posts.service'
 import { ListElements } from '../styles'
 import imageBase64_to_png from '../../util/imageBase64_to_png'
 
+
+import SimpleImageSlider from "react-simple-image-slider";
+import post from '../PostPage';
+
 class ListView extends Component {
   constructor(props) {
     super(props)
@@ -12,6 +16,7 @@ class ListView extends Component {
       posts: []
     };
     this.retrievePosts = this.retrievePosts.bind(this);
+    this.getImgList = this.getImgList.bind(this);
 
   }
 
@@ -37,9 +42,26 @@ class ListView extends Component {
       })
   }
 
+  getImgList(postImageList) {
+    let imgList = []
+    if (postImageList.length > 0) {
+      postImageList.map(img => {
+        imgList.push({ url: img.thumbUrl })
+      })
+
+    } else {
+      imgList = [{ url: process.env.PUBLIC_URL + 'img/dog.jpg' }]
+    }
+
+    return imgList
+  }
+
   render() {
     const { posts } = this.state;
-    var imgList = {};
+    var imgList = [
+      { url: process.env.PUBLIC_URL + 'img/dog.jpg' },
+      { url: process.env.PUBLIC_URL + 'img/doPost.jpg' }
+    ];
     return (
 
       <ListElements>
@@ -51,26 +73,43 @@ class ListView extends Component {
           {posts.length > 0
             ?
             posts.map((post, index) => (
-              <li key={index}>
-                {post.title} - {post.type}
-                {post.images != null
+              <>
+                <li key={index}>
+                  {post.title} - {post.type}
+                </li>
 
-                  ? post.images.map((img, index2) => (
-                    <img key={index2} src={`${img.thumbUrl}`} width="480px" height="480px" />
+                <SimpleImageSlider
+                  width={480}
+                  height={480}
+                  images={this.getImgList(post.images)}
+                  showBullets={true}
+                  showNavs={true}
+                  startIndex={0}
+                  navStyle={1}
+                  navSize={50}
+                  navMargin={30}
+                  slideDuration={0.5}
+                />
+              </>
 
-                  ))
-
-                  : console.log('sem imgs')}
-              </li>
 
             ))
 
             : (
 
-              <div>
-                <li>Para carregar a lista lembre-se de rodar o servidor...</li>
-                <li>no diretório /server/ rodar  yarn start </li>
-              </div>
+              <SimpleImageSlider
+                width={896}
+                height={504}
+                images={imgList}
+                showBullets={true}
+                showNavs={true}
+                startIndex={0}
+                navStyle={1}
+                navSize={50}
+                navMargin={30}
+                slideDuration={0.5}
+
+              />
             )
           }
         </ul>
@@ -84,3 +123,10 @@ class ListView extends Component {
 }
 
 export default ListView;
+
+/*
+<div>
+  <li>Para carregar a lista lembre-se de rodar o servidor...</li>
+  <li>no diretório /server/ rodar  yarn start </li>
+</div>
+*/
