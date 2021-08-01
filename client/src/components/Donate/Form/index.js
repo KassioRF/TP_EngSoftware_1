@@ -41,7 +41,7 @@ class FormBootstrap extends Component {
       title: "",
       type: "",
       age: null,
-      gender: "",
+      gender: "male",
       description: "",
       images: {},
 

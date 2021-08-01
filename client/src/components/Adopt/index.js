@@ -45,22 +45,34 @@ class Adopt extends Component {
   }
 
 
+
+
   render() {
     const { posts } = this.state;
-
+    let rowCounter = 3;
     return (
       <Container>
         <BodyPage>
           <Title> Adote um pet :) </Title>
           <Row>
+
             {posts.length > 0
               ?
-              posts.map((post) => (
-                <Col key={post.id} ><CardAdopt key={post.id} data={post} /></Col>
-              ))
+              <>
+                <Row>
+                  {
+                    posts.map((post) => (
 
+                      <Col md={4} key={post.id} style={{ marginBottom: '3.5rem' }} ><CardAdopt key={post.id} data={post} /></Col>
+
+                    ))
+                  }
+                </Row>
+
+              </>
               : console.log('sem posts')
             }
+
           </Row>
         </BodyPage>
       </Container>

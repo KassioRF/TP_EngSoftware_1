@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
+
 import Container from 'react-bootstrap/Container'
-import { Title, BodyPage } from '../styles'
-import { ImagePost as Image } from '../styles'
-import { InfoPost } from '../styles'
-import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ListGroup from 'react-bootstrap/ListGroup'
 
-
+import { BodyPage } from '../styles'
+import { ImagePost as Image } from '../styles'
+import { InfoPost } from '../styles'
 
 import PostsDataService from '../../services/Posts.service'
 import imageBase64_to_png from '../../util/imageBase64_to_png'
@@ -66,14 +65,24 @@ class post extends Component {
 
                 </Col>
 
-                <InfoPost md={6} ><h1> Olá!  </h1>
+                <InfoPost md={6} ><h1> {post.title}  </h1>
                   <ListGroup variant="flush">
                     <ListGroup.Item>Moro em {post.city} - {post.state}</ListGroup.Item>
-                    <ListGroup.Item>Sou brincalhona e muito curiosa</ListGroup.Item>
-                    <ListGroup.Item>Tenho muita vontade de conhecer meus futuros papais</ListGroup.Item>
-                    <ListGroup.Item>Me leve para casa </ListGroup.Item>
+                    {post.age > 1
+                      ?
+                      <ListGroup.Item>Tenho {post.age} anos </ListGroup.Item>
+                      :
+                      <ListGroup.Item>Tenho {post.age} ano </ListGroup.Item>
+
+                    }
+
+                    {/* <ListGroup.Item>Sou brincalhona e muito curiosa</ListGroup.Item> */}
+                    <ListGroup.Item>Para me adotar entre em contato com {post.author} </ListGroup.Item>
+                    <ListGroup.Item>Tel: {post.contact} </ListGroup.Item>
+                    <ListGroup.Item>e-mail: {post.email} </ListGroup.Item>
+                    <ListGroup.Item>Tenho muita vontade de conhecer meus futuros papais *-*</ListGroup.Item>
                   </ListGroup>
-                  <Row><Button variant="primary">Quero Adotar</Button></Row>
+                  {/* <Row><Button variant="primary">Quero Adotar</Button></Row> */}
                 </InfoPost>
               </>
               :
@@ -85,7 +94,7 @@ class post extends Component {
 
 
                   </ListGroup>
-                  <Row><Button variant="primary">Quero Adotar</Button></Row>
+                  {/* <Row><Button variant="primary">Quero Adotar</Button></Row> */}
                 </InfoPost>
               </>
             }
@@ -93,6 +102,17 @@ class post extends Component {
 
 
           </Row>
+          {post
+            ?
+            <Row>
+              <InfoPost md={12} style={{ margin: '2.5rem 0.5rem 3.5rem 5px' }}>
+                <h4>Informações adicionais:</h4>
+                <p>{post.description}</p>
+              </InfoPost>
+            </Row>
+            :
+            <></>
+          }
 
         </BodyPage>
       </Container>

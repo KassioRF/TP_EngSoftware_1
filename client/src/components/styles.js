@@ -16,6 +16,8 @@ import PostPage from './PostPage'
 let yellow = 'yellow'
 let black = '#262626'
 let whiteText = '#f5f6fa'
+let footerText = '#bfbfbf'
+let footerBg = '#212529'
 
 
 /********************** Basic Components *************************/
@@ -76,12 +78,17 @@ export const Title = styled.h1`
 
 /** Footer */
 export const Footer_ = styled.footer`
-
+  position: absolute;
+  color: ${footerText};
   background-color: ${black};
-  padding: 0.01vh 0;
-  /*margin-top: 10vh;*/
+  padding: 1.5vh 1.5vh;
+  padding-top: 3vh;
   width: 100%;
-  bottom: 0;
+
+  p {
+    opacity: 0.7;
+  }
+
 `
 export const FooterTitle = styled.h1`
   color: ${whiteText};
@@ -206,6 +213,16 @@ export const ListElements = styled(ColForm)`
 
 export const CardAdopt = styled(Card)`
   
+  /*
+  max-height: 80vh;
+  min-height: 95vh;
+  */
+  border-radius: 0.8rem;
+  box-shadow: 0 0px 5px 1px rgb(100 100 100);
+
+  .card-img-top {
+    
+  }
   .row{
     justify-content: center;
   }
@@ -218,6 +235,7 @@ export const CardAdopt = styled(Card)`
 
   .Card.Text{
     padding-right: 2rem;
+
   }
 
   background-color: ${black};
@@ -227,6 +245,11 @@ export const CardAdopt = styled(Card)`
 
   .card-text {
     color: ${whiteText};
+
+  }
+  .post-info-resume {
+    padding-top: 1vh;
+    min-height: 11vh;
   }
 
   .btn-primary {
@@ -243,40 +266,66 @@ export const RowAdopt = styled(Row)`
   
   margin-bottom: 3vh;
 
-   `
+`
 
 
 /*------Seção Post Page-------- */
 export const ImagePost = styled(Image)`
     width: 100%;
-    padding-top: 1.5rem;
+    margin-top: 5rem;
+    background-color: ${black};  
+    border-radius: 0.8rem;
+    box-shadow: 0 0px 5px 1px rgb(100 100 100);
 `
-export const InfoPost = styled(Col)
-  `
-.row{
-  justify-content: center;
-}
+
+
+export const InfoPost = styled(ColForm)`
+
+  background-color: ${black};
+  color: ${whiteText};
+  margin-top: 5rem;
+  
+  padding-left: 3%;
+  padding-right: 3%;
+
+  /*
+  margin-bottom: 5rem;
+  */
+  
+  h1 { 
+    color: ${whiteText};
+    text-align:center;
+    margin-bottom: 2.7rem;
+  }
+  h4 {
+    color: ${whiteText};
+    margin-bottom: 2.7rem;
+  }
+  .row{
+    justify-content: center;
+  }
+  .list-group-flush > .list-group-item {
+    color: ${whiteText};
     background-color: ${black};
-   
-    margin-top: 1.5rem;
-    h1 { 
-      color: ${whiteText};
-      text-align:center;
-    }
-
-    .list-group-flush > .list-group-item {
-      color: ${whiteText};
-      background-color: ${black};
-      
-    }
-
-    .btn-primary {
-      background-color: ${yellow};
-      color: black;
-      border: 4pt ${black};
-      justify-content: center;
-      margin-top: 3rem;
-      }
     
-    
-`
+  }
+  .btn-primary {
+    background-color: ${yellow};
+    color: black;
+    border: 4pt ${black};
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .info-element {
+    margin-bottom: 5rem;
+  }
+
+  `
+
+
+
+
+
+
+

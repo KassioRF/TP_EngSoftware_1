@@ -22,7 +22,7 @@ class CardAdopt extends Component {
     const { post } = this.state
     return (
 
-      <Card style={{ width: '18rem' }}  >
+      <Card >
         {post.images
           ?
           <Card.Img variant="top" src={`${post.images[0].thumbUrl}`} />
@@ -31,9 +31,9 @@ class CardAdopt extends Component {
         }
         <Card.Body>
           <Card.Title>{post.title}</Card.Title>
-          <Card.Text>
+          <Card.Text className="post-info-resume">
             {post.description.length > 100
-              ? post.description.slice(-100) + '.....'
+              ? post.description.substr(0, 100) + '...'
               :
               post.description
             }
@@ -57,7 +57,7 @@ class CardAdopt extends Component {
 
 
           {/* usar o post id para ir para a rota get - post.services! */}
-          <Row><Button as={Link} to={`/post/${post.id}`} variant="primary">Adotar!</Button></Row>
+          <Row><Button as={Link} to={`/post/${post.id}`} variant="primary">Detalhes</Button></Row>
         </Card.Body>
       </Card>
     )
