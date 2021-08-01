@@ -9,9 +9,6 @@ import "antd/dist/antd.css";
 class UploadImages extends Component {
   constructor(props) {
     super(props);
-
-    //this.previewImage = React.createRef();
-
     this.handleCancel = this.handleCancel.bind(this);
     this.handlePreview = this.handlePreview.bind(this);
     this.handleChange = this.handleChange.bind(this);

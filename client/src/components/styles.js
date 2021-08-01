@@ -10,14 +10,12 @@ import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 
 import FormBootstrap from './Donate/Form'
-import ListView from './ListAll/ListView'
-import PostPage from './PostPage'
 //import Form from 'react-bootstrap/Form'
 let yellow = 'yellow'
 let black = '#262626'
 let whiteText = '#f5f6fa'
 let footerText = '#bfbfbf'
-let footerBg = '#212529'
+
 
 
 /********************** Basic Components *************************/
@@ -192,15 +190,6 @@ export const FormBtn = styled(Button)`
 
 /* ---------- TESTES ---------- */
 
-export const ListView_ = styled(ListView)`
-  margin-left: 25%;
-  .list-view {
-  background-color: ${whiteText} !important;
-  color: ${black};
-  font-size: 18px;
-  }
-  `
-
 
 export const ListElements = styled(ColForm)`
   padding-left: 15%;
@@ -261,7 +250,15 @@ export const CardAdopt = styled(Card)`
     border: 4pt ${black};
     justify-content: center;
     margin-top: 3rem;
-    }
+    font-weight: 500;
+
+    transition: .1s;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.03);
+    transition: .1s;
+  }
   
 `
 
@@ -318,6 +315,14 @@ export const InfoPost = styled(ColForm)`
     border: 4pt ${black};
     justify-content: center;
     margin-top: 3rem;
+    font-weight: 500;
+
+    transition: .1s;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.03);
+    transition: .1s;
   }
   
   .info-element {

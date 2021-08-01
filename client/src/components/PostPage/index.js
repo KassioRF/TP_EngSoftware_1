@@ -20,7 +20,8 @@ class post extends Component {
     super(props);
     this.state = {
       post: this.props.data,
-      images: []
+      images: [],
+      isLoading: true
     }
     this.retrievePost = this.retrievePost.bind(this);
     this.getImgList = this.getImgList.bind(this);
@@ -28,6 +29,7 @@ class post extends Component {
   }
   componentDidMount() {
     this.retrievePost();
+    this.setState({ isLoading: false })
 
   }
   retrievePost() {
@@ -62,11 +64,11 @@ class post extends Component {
   }
 
   render() {
-    const { post } = this.state
+    const { post, isLoading } = this.state
     return (
       <Container>
         <BodyPage>
-          <Row>
+          <Row style={{ alignItems: 'center' }}>
             {post
               ?
               <>
@@ -91,6 +93,7 @@ class post extends Component {
                     style={
                       {
                         width: '100%',
+                        backgroundColor: '#262626',
                         borderRadius: '0.8rem',
                         boxShadow: '0 0px 5px 1px rgb(100 100 100)',
                         paddingLeft: '2rem'
@@ -123,15 +126,22 @@ class post extends Component {
               </>
               :
               <>
-                <InfoPost md={12} ><h4 style={{ color: 'tomato' }}> Ops.. Algo deu errado :(  </h4>
-                  <ListGroup variant="flush">
-                    <ListGroup.Item>Não é possível se conectar com o servidor... </ListGroup.Item>
+                {isLoading
+                  ?
+                  <>
+                    <InfoPost md={12} ><h4 style={{ color: 'tomato' }}> Ops.. Algo deu errado :(  </h4>
+                      <ListGroup variant="flush">
+                        <ListGroup.Item>Não é possível se conectar com o servidor... </ListGroup.Item>
 
 
 
-                  </ListGroup>
-                  {/* <Row><Button variant="primary">Quero Adotar</Button></Row> */}
-                </InfoPost>
+                      </ListGroup>
+                      {/* <Row><Button variant="primary">Quero Adotar</Button></Row> */}
+                    </InfoPost>
+                  </>
+                  :
+                  console.log('Carregando')
+                }
               </>
             }
 
