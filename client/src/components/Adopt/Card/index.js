@@ -32,17 +32,13 @@ class CardAdopt extends Component {
           <Card.Title>
             {post.title}
           </Card.Title>
-
           <Row style={{ justifyContent: 'space-evenly' }}>
             <Card.Text>
               Idade: {post.age}
             </Card.Text>
             <Card.Text>
-
               {post.gender == 'macho' ? <FontAwesomeIcon icon={faMars} style={{ color: "#ff66a3", fontSize: "24px" }} /> : <FontAwesomeIcon style={{ color: "#66b3ff", fontSize: "24px" }} icon={faVenus} />}
-              {/* <FontAwesomeIcon icon={faMars} /> */}
             </Card.Text>
-
           </Row>
           <Row><Button as={Link} to={`/post/${post.id}`} variant="primary">Detalhes</Button></Row>
         </Card.Body>

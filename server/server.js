@@ -24,14 +24,7 @@ db.sequelize.sync({ force: true }).then(() => {
 });
 */
 
-/*
-//simple route - test
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Server Side Fella's 😄  " });
-})
-*/
 require("./app/routes/Posts.routes")(app);
-
 
 //set port, listen for requests
 const PORT = process.env.PORT || 3001;
