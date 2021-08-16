@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
+
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
@@ -29,23 +32,15 @@ class CardAdopt extends Component {
           <Card.Title>
             {post.title}
           </Card.Title>
-          <Card.Text style={{ textTransform: 'capitalize' }}>
-            {post.type}
-          </Card.Text>
-          <Card.Text className="post-info-resume">
-            {post.description.length > 100
-              ? post.description.substr(0, 100) + '...'
-              :
-              post.description
-            }
-          </Card.Text>
 
           <Row style={{ justifyContent: 'space-evenly' }}>
             <Card.Text>
               Idade: {post.age}
             </Card.Text>
             <Card.Text>
-              Sexo: {post.gender}
+
+              {post.gender == 'macho' ? <FontAwesomeIcon icon={faMars} style={{ color: "#ff66a3", fontSize: "24px" }} /> : <FontAwesomeIcon style={{ color: "#66b3ff", fontSize: "24px" }} icon={faVenus} />}
+              {/* <FontAwesomeIcon icon={faMars} /> */}
             </Card.Text>
 
           </Row>

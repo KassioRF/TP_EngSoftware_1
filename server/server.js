@@ -13,7 +13,7 @@ app.use(express.json({ limit: '70mb' }));
 // Parse requests of content-type - application/x-www-form-rlencoded
 app.use(express.urlencoded({ extended: true, limit: '70mb' }));
 
-const db = require("./app/models");
+const db = require("./app/models/DataBase");
 /* No final usar este sync*/
 db.sequelize.sync();
 
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Server Side Fella's 😄  " });
 })
 */
-require("./app/routes/posts.routes")(app);
+require("./app/routes/Posts.routes")(app);
 
 
 //set port, listen for requests

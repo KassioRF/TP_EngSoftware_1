@@ -249,7 +249,7 @@ export const CardAdopt = styled(Card)`
     color: black;
     border: 4pt ${black};
     justify-content: center;
-    margin-top: 3rem;
+    ${'' /* margin-top: 3rem; */}
     font-weight: 500;
 
     transition: .1s;

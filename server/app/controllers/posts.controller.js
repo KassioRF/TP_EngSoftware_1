@@ -1,11 +1,9 @@
-const db = require("../models");
-//const upload = require('../services/upload_image_handler')
+const db = require("../models/DataBase");
 const Posts = db.posts;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tutorial
+// Create and Save a new Post
 exports.create = (req, res) => {
-  console.log('entrou em create')
   // Validade request
   if (!req.body.title) {
     res.status(400).send({
@@ -14,8 +12,6 @@ exports.create = (req, res) => {
     return;
   }
 
-
-  //const imgdata = req.body.images[0].thumbUrl;
   const post = {
     author: req.body.author,
     contact: req.body.contact,
@@ -32,13 +28,6 @@ exports.create = (req, res) => {
 
   };
 
-
-  //console.log(post)
-  //res.send({ data: "Meu confrade, aqui os dados foram recebidos com sucesso!!!! =D" });
-
-  //SALVAR depois de conferir os dados!
-
-  //  @Todo: Caso algo dê errado, desfazer a transação
   Posts.create(post)
     .then(data => {
       console.log(data)
@@ -139,7 +128,7 @@ exports.delete = (req, res) => {
       });
     });
 };
-// Post all Posts from the database.
+// Delete all Posts from the database.
 exports.deleteAll = (req, res) => {
   Posts.destroy({
     where: {},
